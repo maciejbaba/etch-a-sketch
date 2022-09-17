@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 *::before, *::after {
@@ -12,11 +13,31 @@
 }
 
 body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+}
+
+#header {
+  text-align: center;
+}
+
+#content {
   height: 100vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10%;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
 }
 
 #container {
@@ -26,7 +47,6 @@ body {
   background-color: aqua;
   height: 70%;
   width: 60%;
-  margin-left: 300px;
 }
 
 .grid-item {
