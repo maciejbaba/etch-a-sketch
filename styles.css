@@ -23,24 +23,50 @@ body {
   text-align: center;
 }
 
+#header h1 {
+  margin-bottom: 0;
+}
+
 #content {
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #menu {
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 20%;
 }
 
-#container {
+#menu button {
+  width: 5rem;
+  height: 1.5rem;
+}
+
+#color-picker input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+#color-picker input::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+#grid {
   display: grid;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-columns), 1fr);
@@ -54,4 +80,9 @@ body {
   text-align: center;
   width: 1fr;
   height: 1fr;
+}
+
+#footer {
+  text-align: center;
+  height: 10px;
 }
