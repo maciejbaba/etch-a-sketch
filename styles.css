@@ -52,6 +52,11 @@ body {
   height: 1.5rem;
 }
 
+#choose-size-slider-div {
+  width: 5rem;
+  height: 1.5rem;
+}
+
 #color-picker input{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -63,7 +68,7 @@ body {
 }
 
 #color-picker input::-webkit-color-swatch {
-  border-radius: 50%;
+  border-radius: 25%;
 }
 
 #grid {
