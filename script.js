@@ -9,6 +9,7 @@ const rainbowModeButton = document.getElementById("rainbow-mode-button")
 const eraserModeButton = document.getElementById("eraser-mode-button")
 const clearButton = document.getElementById("clear-button")
 const size = document.getElementById("size")
+const DEFAULT_BUTTON_COLOR = "white"
 
 let drawColor = pickColorButton.value
 let drawMode = "color"
@@ -49,7 +50,15 @@ function setDrawColor(mode) {
   if (mode == "eraser") return "white"
 }
 
+function deactiveModeButtons() {
+  colorModeButton.style.backgroundColor = DEFAULT_BUTTON_COLOR
+  rainbowModeButton.style.backgroundColor = DEFAULT_BUTTON_COLOR
+  eraserModeButton.style.backgroundColor = DEFAULT_BUTTON_COLOR
+}
+
 function setModeButtonActive(mode) {
+  deactiveModeButtons()
+
   if (mode === "color") colorModeButton.style.backgroundColor = "aqua"
 
   if (mode === "rainbow") rainbowModeButton.style.backgroundColor = "aqua"
