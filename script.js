@@ -13,7 +13,7 @@ const selectSize = document.getElementById("select-size")
 
 let gridSize = selectSize.value
 
-const DEFAULT_BUTTON_COLOR = "white"
+const DEFAULT_BUTTON_COLOR = "grey"
 
 let drawColor = pickColorButton.value
 let drawMode = "color"
@@ -65,7 +65,7 @@ function setDrawColor(mode) {
 
   if (mode === "rainbow") return pickRandomHexColor()
 
-  if (mode == "eraser") return "white"
+  if (mode == "eraser") return "#123456"
 }
 
 function deactiveModeButtons() {
@@ -78,9 +78,9 @@ function setModeButtonActive(mode) {
 
   deactiveModeButtons()
 
-  if (mode === "color") colorModeButton.style.backgroundColor = "aqua"
-  if (mode === "rainbow") rainbowModeButton.style.backgroundColor = "aqua"
-  if (mode === "eraser") eraserModeButton.style.backgroundColor = "aqua"
+  if (mode === "color") colorModeButton.style.backgroundColor = "#32de87"
+  if (mode === "rainbow") rainbowModeButton.style.backgroundColor = "#32de87"
+  if (mode === "eraser") eraserModeButton.style.backgroundColor = "#32de87"
 }
 
 function pickRandomHexColor() {

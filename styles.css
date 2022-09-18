@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
 *::before, *::after {
@@ -18,7 +19,7 @@ body {
   margin: 0;
   flex-direction: column;
   background-color: black;
-  color: white;
+  color: #123456;
 }
 
 #header {
@@ -49,10 +50,25 @@ body {
   font-size: 15px;
 }
 
+#menu button:hover, #menu input:hover, #menu select:hover{
+  transform: scale(1.15);;
+}
+
+#menu button, input, select {
+  transition: all 0.3s ease-in-out;
+}
+
+#menu button:hover {
+  box-shadow: 0 0 5px #32de87
+}
+
 #menu button {
   width: 5.5rem;
   height: 1.5rem;
   font-size: 15px;
+  color: #123456;
+  background-color: grey;
+  border-radius: 25%;
 }
 
 #color-picker input{
@@ -70,26 +86,38 @@ body {
   border-radius: 25%;
 }
 
+#clear-button:active {
+  background-color: #32de87;
+}
+
 #choose-size-select-div {
   width: 5rem;
   height: 1.5rem;
   padding-left: 15px;
+  color: #123456;
+}
+
+#select-label {
+  margin-left: -7.5px;
+}
+
+#select-size {
+  color: #123456;
+  background-color: grey;
 }
 
 #grid {
   display: grid;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-columns), 1fr);
-  background-color: white;
-  overflow: auto;
   height: 70%;
   width: 60%;
 }
 
 .grid-item {
-  border: 0.1px solid #ddd;
+  border: 0.1px solid grey;
   text-align: center;
-  background-color: darkslategrey;
+  background-color: #123456;
 }
 
 #footer {
