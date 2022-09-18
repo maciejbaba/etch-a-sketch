@@ -34,8 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10%;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding-left: 5%;
 }
 
 #menu {
@@ -45,16 +44,13 @@ body {
   justify-content: center;
   align-items: center;
   width: 20%;
+  font-size: 15px;
 }
 
 #menu button {
-  width: 5rem;
+  width: 5.5rem;
   height: 1.5rem;
-}
-
-#choose-size-slider-div {
-  width: 5rem;
-  height: 1.5rem;
+  font-size: 15px;
 }
 
 #color-picker input{
@@ -69,6 +65,11 @@ body {
 
 #color-picker input::-webkit-color-swatch {
   border-radius: 25%;
+}
+
+#choose-size-slider-div {
+  width: 5rem;
+  height: 1.5rem;
 }
 
 #grid {
