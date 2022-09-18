@@ -17,6 +17,8 @@ body {
   height: 100vh;
   margin: 0;
   flex-direction: column;
+  background-color: black;
+  color: white;
 }
 
 #header {
@@ -39,7 +41,7 @@ body {
 
 #menu {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -56,6 +58,7 @@ body {
 #color-picker input{
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-color: black;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
@@ -67,9 +70,10 @@ body {
   border-radius: 25%;
 }
 
-#choose-size-slider-div {
+#choose-size-select-div {
   width: 5rem;
   height: 1.5rem;
+  padding-left: 15px;
 }
 
 #grid {
@@ -77,6 +81,7 @@ body {
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   background-color: white;
+  overflow: auto;
   height: 70%;
   width: 60%;
 }
@@ -84,8 +89,7 @@ body {
 .grid-item {
   border: 0.1px solid #ddd;
   text-align: center;
-  width: 1fr;
-  height: 1fr;
+  background-color: darkslategrey;
 }
 
 #footer {

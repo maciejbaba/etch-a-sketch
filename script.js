@@ -1,5 +1,6 @@
-const container = document.getElementById("grid")
-createGrid(16, 16)
+const grid = document.getElementById("grid")
+const DEFAULT_GRID_SIZE = "8x8"
+createGrid(DEFAULT_GRID_SIZE)
 
 const gridSquares = [...document.getElementsByClassName("grid-item")]
 
@@ -8,7 +9,10 @@ const colorModeButton = document.getElementById("color-mode-button")
 const rainbowModeButton = document.getElementById("rainbow-mode-button")
 const eraserModeButton = document.getElementById("eraser-mode-button")
 const clearButton = document.getElementById("clear-button")
-const selectSizeValue = document.getElementById("select-size")
+const selectSize = document.getElementById("select-size")
+
+let gridSize = selectSize.value
+
 const DEFAULT_BUTTON_COLOR = "white"
 
 let drawColor = pickColorButton.value
@@ -41,10 +45,20 @@ eraserModeButton.addEventListener("click", function() {
 })
 
 clearButton.addEventListener("click", function() {
-  gridSquares.forEach(function(square) {
-    square.style.backgroundColor = "white"
-  })
+  clearGrid()
+  createGrid(gridSize)
 })
+
+selectSize.addEventListener("click", function() {
+  gridSize = selectSize.value
+
+  clearGrid()
+  createGrid(gridSize)
+})
+
+function clearGrid() {
+  grid.innerHTML = ""
+}
 
 function setDrawColor(mode) {
   if(mode === "color") return pickColorButton.value
@@ -77,12 +91,18 @@ function pickRandomHexColor() {
   return "#" + redHex + greenHex + blueHex
 }
 
-function createGrid(rows, columns) {
-  container.style.setProperty("--grid-rows", rows)
-  container.style.setProperty("--grid-columns", columns)
+function createGrid(gridSizeStr) {
+
+  const gridSizeArr = gridSizeStr.split("x")
+  const rows = Number(gridSizeArr[0])
+  const columns = Number(gridSizeArr[1])
+
+  grid.style.setProperty("--grid-rows", rows)
+  grid.style.setProperty("--grid-columns", columns)
 
   for (c = 0; c < rows * columns; c++) {
     let cell = document.createElement("div")
+
     cell.ondragstart = function() {
       return false
     }
@@ -91,6 +111,6 @@ function createGrid(rows, columns) {
       if (mouseDown) cell.style.backgroundColor = setDrawColor(drawMode)
     })
 
-    container.appendChild(cell).className = "grid-item"
+    grid.appendChild(cell).className = "grid-item"
   }
 }
