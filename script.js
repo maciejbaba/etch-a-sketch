@@ -8,12 +8,22 @@ const colorModeButton = document.getElementById("color-mode-button")
 const rainbowModeButton = document.getElementById("rainbow-mode-button")
 const eraserModeButton = document.getElementById("eraser-mode-button")
 const clearButton = document.getElementById("clear-button")
-const size = document.getElementById("size")
+const selectSizeValue = document.getElementById("select-size")
 const DEFAULT_BUTTON_COLOR = "white"
 
 let drawColor = pickColorButton.value
 let drawMode = "color"
 setModeButtonActive(drawMode)
+
+let mouseDown = false
+
+document.body.onmousedown = function() {
+  mouseDown = true
+}
+
+document.body.onmouseup = function() {
+  mouseDown = false
+}
 
 colorModeButton.addEventListener("click", function() {
   drawMode = "color"
@@ -36,12 +46,6 @@ clearButton.addEventListener("click", function() {
   })
 })
 
-gridSquares.forEach(function(square) {
-  square.addEventListener("mouseover", function() {
-    square.style.backgroundColor = setDrawColor(drawMode)
-  })
-})
-
 function setDrawColor(mode) {
   if(mode === "color") return pickColorButton.value
 
@@ -57,12 +61,11 @@ function deactiveModeButtons() {
 }
 
 function setModeButtonActive(mode) {
+
   deactiveModeButtons()
 
   if (mode === "color") colorModeButton.style.backgroundColor = "aqua"
-
   if (mode === "rainbow") rainbowModeButton.style.backgroundColor = "aqua"
-
   if (mode === "eraser") eraserModeButton.style.backgroundColor = "aqua"
 }
 
@@ -77,8 +80,17 @@ function pickRandomHexColor() {
 function createGrid(rows, columns) {
   container.style.setProperty("--grid-rows", rows)
   container.style.setProperty("--grid-columns", columns)
+
   for (c = 0; c < rows * columns; c++) {
     let cell = document.createElement("div")
+    cell.ondragstart = function() {
+      return false
+    }
+
+    cell.addEventListener("mouseover", function() {
+      if (mouseDown) cell.style.backgroundColor = setDrawColor(drawMode)
+    })
+
     container.appendChild(cell).className = "grid-item"
   }
 }
