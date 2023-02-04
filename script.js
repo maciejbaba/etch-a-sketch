@@ -100,7 +100,7 @@ function createGrid(gridSizeStr) {
   grid.style.setProperty("--grid-rows", rows)
   grid.style.setProperty("--grid-columns", columns)
 
-  for (c = 0; c < rows * columns; c++) {
+  for (i = 0; i < rows * columns; i++) {
     let cell = document.createElement("div")
 
     cell.ondragstart = function() {
