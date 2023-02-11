@@ -2,6 +2,11 @@ const grid = document.getElementById("grid")
 const DEFAULT_GRID_SIZE = "8x8"
 createGrid(DEFAULT_GRID_SIZE)
 
+const dateSpanElement = document.getElementById("date")
+const year = (new Date()).getFullYear()
+
+dateSpanElement.innerText = year
+
 const gridSquares = [...document.getElementsByClassName("grid-item")]
 
 const pickColorButton = document.getElementById("pick-color")
