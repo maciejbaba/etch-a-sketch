@@ -1,6 +1,6 @@
 # etch-a-sketch
 
-Demo -> https://maciek367.github.io/etch-a-sketch/
+Demo -> https://maciejbaba.github.io/etch-a-sketch/
 
 This is project of a gird on which you can draw.
 
