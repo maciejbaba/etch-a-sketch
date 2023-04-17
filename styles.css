@@ -66,7 +66,6 @@ body {
   width: 5.5rem;
   height: 1.5rem;
   font-size: 15px;
-  color: #123456;
   background-color: grey;
   border-radius: 25%;
 }
@@ -94,7 +93,6 @@ body {
   width: 5rem;
   height: 1.5rem;
   padding-left: 15px;
-  color: #123456;
 }
 
 #select-label {
@@ -102,7 +100,6 @@ body {
 }
 
 #select-size {
-  color: #123456;
   background-color: grey;
 }
 
